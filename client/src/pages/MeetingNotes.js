@@ -23,7 +23,7 @@ function MeetingNotes() {
   const handleGenerateNotes = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post('/meeting-notes/generate', {
+      await api.post('/meeting-notes/generate', {
         transcript,
         participants: participants.split(',').map(p => p.trim())
       });

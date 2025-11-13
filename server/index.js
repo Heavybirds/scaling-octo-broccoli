@@ -74,13 +74,15 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start server
+// Start server only if not in test mode
 const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => {
-  console.log(`🚀 Private Jet Ecosystem Platform running on port ${PORT}`);
-  console.log(`📡 WebSocket server ready for real-time flight tracking`);
-  console.log(`🔒 Secure data hosting enabled`);
-  console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
-});
+if (process.env.NODE_ENV !== 'test') {
+  server.listen(PORT, () => {
+    console.log(`🚀 Private Jet Ecosystem Platform running on port ${PORT}`);
+    console.log(`📡 WebSocket server ready for real-time flight tracking`);
+    console.log(`🔒 Secure data hosting enabled`);
+    console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
+  });
+}
 
 module.exports = { app, server, wss };

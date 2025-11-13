@@ -5,7 +5,6 @@ function Workflow() {
   const [workflows, setWorkflows] = useState([]);
   const [tasks, setTasks] = useState([]);
   const [showWorkflowForm, setShowWorkflowForm] = useState(false);
-  const [showTaskForm, setShowTaskForm] = useState(false);
   const [workflowFormData, setWorkflowFormData] = useState({
     title: '',
     description: '',

@@ -17,6 +17,7 @@ function Scheduling() {
 
   useEffect(() => {
     fetchAppointments();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timezone]);
 
   const fetchAppointments = async () => {
